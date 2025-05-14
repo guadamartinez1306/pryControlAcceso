@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +76,10 @@
             this.pegarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator7 = new System.Windows.Forms.ToolStripSeparator();
             this.ayudaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.temporizador = new System.Windows.Forms.Timer(this.components);
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.btnTarea = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -391,6 +396,7 @@
             this.imprimirToolStripButton.Name = "imprimirToolStripButton";
             this.imprimirToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.imprimirToolStripButton.Text = "&Imprimir";
+            this.imprimirToolStripButton.Click += new System.EventHandler(this.imprimirToolStripButton_Click);
             // 
             // toolStripSeparator6
             // 
@@ -438,11 +444,40 @@
             this.ayudaToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.ayudaToolStripButton.Text = "Ay&uda";
             // 
+            // temporizador
+            // 
+            this.temporizador.Interval = 200;
+            this.temporizador.Tick += new System.EventHandler(this.temporizador_Tick);
+            // 
+            // lblTimer
+            // 
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimer.Location = new System.Drawing.Point(196, 192);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(145, 18);
+            this.lblTimer.TabIndex = 3;
+            this.lblTimer.Text = "                                  ";
+            // 
+            // btnTarea
+            // 
+            this.btnTarea.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTarea.Location = new System.Drawing.Point(171, 116);
+            this.btnTarea.Name = "btnTarea";
+            this.btnTarea.Size = new System.Drawing.Size(195, 56);
+            this.btnTarea.TabIndex = 4;
+            this.btnTarea.Text = "Iniciar Tarea";
+            this.btnTarea.UseVisualStyleBackColor = true;
+            this.btnTarea.Click += new System.EventHandler(this.btnTarea_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(537, 358);
+            this.Controls.Add(this.btnTarea);
+            this.Controls.Add(this.lblTimer);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.lblArchivoSeleccionado);
             this.Controls.Add(this.menuStrip1);
@@ -450,6 +485,7 @@
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Control Acceso";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
@@ -507,6 +543,10 @@
         private System.Windows.Forms.ToolStripButton pegarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
         private System.Windows.Forms.ToolStripButton ayudaToolStripButton;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Timer temporizador;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.Button btnTarea;
     }
 }
 
